@@ -3,7 +3,7 @@ package com.codesnippet.ecom.Service;
 import com.codesnippet.ecom.Entity.Product;
 import com.codesnippet.ecom.Repository.ProductRepository;
 //import com.codesnippet.ecom.customAnnotations.LogExecutionTime;
-import lombok.extern.slf4j.Slf4j;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +14,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Slf4j
+
 public class ProductService{
+    private static final Logger log
+            = LoggerFactory. getLogger(ProductService.class);
 
     private final ProductRepository productRepository;
 

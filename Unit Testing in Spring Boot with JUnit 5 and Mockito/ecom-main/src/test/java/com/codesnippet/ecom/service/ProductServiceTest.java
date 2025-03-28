@@ -40,6 +40,7 @@ public class ProductServiceTest {
 
     @Test
     void addProductShouldAddProductSuccessfully(){
+        
         when(productRepository.save(product)).thenReturn(product);
 
         Product addedProduct = productService.addProduct(product);
@@ -47,6 +48,8 @@ public class ProductServiceTest {
         assertNotNull(addedProduct);
         assertEquals(product.getId(),addedProduct.getId());
         assertEquals(product.getName(),addedProduct.getName());
+        assertEquals(product.getDescription(),addedProduct.getDescription());
+        assertEquals(product.getPrice(), addedProduct.getPrice());
         assertTrue(product.getId()==1);
     }
 
